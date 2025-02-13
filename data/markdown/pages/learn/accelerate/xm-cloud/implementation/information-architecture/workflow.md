@@ -57,7 +57,7 @@ Note that only templates that have the <code>_PerSiteStandardValues</code> base 
 
 If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
 
-Note that only templates that have the **_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: */sitecore/Templates/Foundation/Experience Accelerator/StandardValues/*. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
+Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
 
 ### Configuration of Users/Roles
 
@@ -115,39 +115,39 @@ If your requirements on workflow state the need of sending email notifications -
 1. Create a new Webhook Submit Action under a specific state or command, depending on your desired needs. For example we can create this Webhook Submit Action under the <code>Approved</code> state, which will then send the following payload to the endpoint that we specify in this item.
 
 
-    ```json
-    {
-      "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "ActionName": "Name",
-      "Comments": [],
-      "DataItem": {
-        "Language": "en",
-        "Version": 4,
-        "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
-        "Name": "Home",
-        "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
-        "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
-        "TemplateName": "Page",
-        "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
-        "SharedFields": [],
-        "UnversionedFields": [],
-        "VersionedFields": []
-      },
-      "Message": "",
-      "NextState": null,
-      "PreviousState": {
-        "DisplayName": "Draft",
-        "FinalState": false,
-        "Icon": "Software/16x16/jar.png",
-        "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
-        "PreviewPublishingTargets": []
-      },
-      "UserName": "sitecore\\john.doe@example.com",
-      "WorkflowName": "Simple Page Workflow",
-      "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "WebhookItemName": "Name"
-    }
-    ```
+   ```json
+   {
+     "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "ActionName": "Name",
+     "Comments": [],
+     "DataItem": {
+       "Language": "en",
+       "Version": 4,
+       "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
+       "Name": "Home",
+       "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
+       "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
+       "TemplateName": "Page",
+       "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
+       "SharedFields": [],
+       "UnversionedFields": [],
+       "VersionedFields": []
+     },
+     "Message": "",
+     "NextState": null,
+     "PreviousState": {
+       "DisplayName": "Draft",
+       "FinalState": false,
+       "Icon": "Software/16x16/jar.png",
+       "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
+       "PreviewPublishingTargets": []
+     },
+     "UserName": "sitecore\\john.doe@example.com",
+     "WorkflowName": "Simple Page Workflow",
+     "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "WebhookItemName": "Name"
+   }
+   ```
 
 2. The webhook will send a POST request to the URL that you provided.
 3. Within the Webhook Submit Action you will configure the URL and Authorization details for the url that you are specifying.  If your endpoint requires additional authorization steps before sending the request, use the [Walkthrough to configure authorization](https://doc.sitecore.com/xp/en/developers/103/sitecore-experience-manager/walkthrough--using-an-authorization-item.html) to configure this item before completing the configuration of the Webhook Submit Action.
